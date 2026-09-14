@@ -1,0 +1,5 @@
+cohort: TCGA-BLCA
+data_dir: "D:/pathosurv-ml/data"
+manifest_path: "D:/pathosurv-ml/data/gdc_manifest.txt"
+clinical_path: "D:/pathosurv-ml/data/clinical.json"
+output_csv: "D:/pathosurv-ml/data/processed_metadata.csv"

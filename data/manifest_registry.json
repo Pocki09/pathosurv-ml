@@ -1,0 +1,18 @@
+[
+  {
+    "registered_at": "2026-09-17T02:03:48.158624+00:00",
+    "cohort": "TCGA-BLCA",
+    "manifest_path": "C:\\Users\\MinhHN46\\pathosurv-ml\\data\\gdc_manifest.2026-09-14.222309.txt",
+    "manifest_basename": "gdc_manifest.2026-09-14.222309.txt",
+    "sha256": "d9c9cf6ac498477132a37678145066ef9c4ff9ad9f1b96491299622fcb92c0c7",
+    "size_bytes": 4981749
+  },
+  {
+    "registered_at": "2026-09-17T02:04:11.803578+00:00",
+    "cohort": "TCGA-BLCA",
+    "manifest_path": "C:\\Users\\MinhHN46\\pathosurv-ml\\data\\gdc_manifest.2026-09-14.222309.txt",
+    "manifest_basename": "gdc_manifest.2026-09-14.222309.txt",
+    "sha256": "d9c9cf6ac498477132a37678145066ef9c4ff9ad9f1b96491299622fcb92c0c7",
+    "size_bytes": 4981749
+  }
+]

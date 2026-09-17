@@ -1,0 +1,5 @@
+# Phase 6+ — frozen pathology encoder (not used in Phase 2)
+encoder_id: TITAN
+encoder_version: pending_access
+fallback_encoder_id: null
+freeze: true

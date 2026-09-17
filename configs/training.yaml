@@ -1,0 +1,5 @@
+# Phase 8–9 — training hyperparameters (not used in Phase 2)
+optimizer: AdamW
+early_stopping_metric: validation_c_index
+max_epochs: 100
+seed: 42

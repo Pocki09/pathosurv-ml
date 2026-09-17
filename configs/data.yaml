@@ -1,5 +1,21 @@
+# PathoSurv Lite — data paths (relative to repository root unless absolute)
 cohort: TCGA-BLCA
-data_dir: "D:/pathosurv-ml/data"
-manifest_path: "D:/pathosurv-ml/data/gdc_manifest.txt"
-clinical_path: "D:/pathosurv-ml/data/clinical.json"
-output_csv: "D:/pathosurv-ml/data/processed_metadata.csv"
+random_seed: 42
+
+# Versioned GDC download manifest (tab-separated)
+manifest_path: data/gdc_manifest.2026-09-14.222309.txt
+wsi_manifest_path: data/wsi_manifest.csv
+
+# Clinical export from GDC (Cases JSON array)
+clinical_path: data/clinical.json
+
+# Derived artifacts
+output_csv: data/processed_metadata.csv
+matched_cohort_path: data/matched_cohort.csv
+subset_manifest_path: data/subset_manifest.txt
+wsi_download_dir: data/raw_slides
+download_audit_path: data/download_audit.json
+manifest_registry_path: data/manifest_registry.json
+
+# Smoke-test subset size (Phase 2: 3–10 WSI)
+smoke_test_wsi_count: 3

@@ -1,0 +1,27 @@
+{
+  "verified_at": "2026-09-17T02:04:20.813711+00:00",
+  "manifest_path": "C:\\Users\\MinhHN46\\pathosurv-ml\\data\\subset_manifest.txt",
+  "download_dir": "C:\\Users\\MinhHN46\\pathosurv-ml\\data\\raw_slides",
+  "file_count": 3,
+  "ok_count": 0,
+  "files": [
+    {
+      "id": "006d850b-7402-479f-890a-d16cdfb0d3cb",
+      "filename": "TCGA-E7-A8O7-01A-01-TSA.A803F220-B487-44C0-832D-9D0B53F9CC79.svs",
+      "status": "missing",
+      "expected_md5": "90029bf743d8a5e8ec6e0c5c1b28b330"
+    },
+    {
+      "id": "007b7ccb-0aea-446c-ad8a-a373da529f25",
+      "filename": "TCGA-2F-A9KQ-01Z-00-DX1.1C8CB2DD-5CC6-4E99-A0F9-32A0F598F5F9.svs",
+      "status": "missing",
+      "expected_md5": "1b5fbdcd521879ad479cbab08b45b152"
+    },
+    {
+      "id": "0073eb02-9fa3-47ff-97a0-4c9ea5b37eb6",
+      "filename": "TCGA-DK-AA6T-01A-01-TS1.789B1AFB-6FA0-47A9-A8EF-797B0D29FDF0.svs",
+      "status": "missing",
+      "expected_md5": "c2276e27bf8f8af289b3a422f60159bb"
+    }
+  ]
+}

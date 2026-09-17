@@ -1,21 +1,25 @@
 import sys
-import torch
+
 import pandas as pd
-import sksurv
-from training.utils import set_seed
+import pytest
 
-def main():
-    print("=== ENVIRONMENT CHECK ===")
-    print(f"Python: {sys.version.split()[0]}")
-    print(f"PyTorch: {torch.__version__}")
-    print(f"CUDA Available: {torch.cuda.is_available()}")
-    print(f"Pandas: {pd.__version__}")
-    print(f"scikit-survival: {sksurv.__version__}")
-    
-    print("\n=== SEED CHECK ===")
+from pathosurv import __version__
+from pathosurv.seed import set_seed
+
+torch = pytest.importorskip("torch")
+sksurv = pytest.importorskip("sksurv")
+
+
+def test_package_import():
+    assert __version__
+
+
+def test_environment_versions():
+    assert sys.version_info >= (3, 10)
+    assert torch.__version__
+    assert pd.__version__
+    assert sksurv.__version__
+
+
+def test_set_seed():
     set_seed(42)
-    
-    print("\nEnvironment is ready!")
-
-if __name__ == "__main__":
-    main()

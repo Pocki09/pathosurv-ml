@@ -1,0 +1,8 @@
+project_name: pathosurv-lite
+python_min: "3.10"
+default_seed: 42
+selected_cohort: TCGA-BLCA
+endpoint:
+  name: overall_survival
+  time_column: survival_time_days
+  event_column: event_status

@@ -1,0 +1,92 @@
+{
+  "tested_at": "2026-09-19T02:16:25.663361+00:00",
+  "openslide_available": true,
+  "slides": [
+    {
+      "path": "D:\\pathosurv-ml\\data\\raw_slides\\006d850b-7402-479f-890a-d16cdfb0d3cb\\TCGA-E7-A8O7-01A-01-TSA.A803F220-B487-44C0-832D-9D0B53F9CC79.svs",
+      "vendor": "aperio",
+      "objective": "40",
+      "dimensions": [
+        145416,
+        39266
+      ],
+      "level_count": 4,
+      "level_dimensions": [
+        [
+          145416,
+          39266
+        ],
+        [
+          36354,
+          9816
+        ],
+        [
+          9088,
+          2454
+        ],
+        [
+          2272,
+          613
+        ]
+      ]
+    },
+    {
+      "path": "D:\\pathosurv-ml\\data\\raw_slides\\007b7ccb-0aea-446c-ad8a-a373da529f25\\TCGA-2F-A9KQ-01Z-00-DX1.1C8CB2DD-5CC6-4E99-A0F9-32A0F598F5F9.svs",
+      "vendor": "aperio",
+      "objective": "40",
+      "dimensions": [
+        110592,
+        77312
+      ],
+      "level_count": 4,
+      "level_dimensions": [
+        [
+          110592,
+          77312
+        ],
+        [
+          27648,
+          19328
+        ],
+        [
+          6912,
+          4832
+        ],
+        [
+          3456,
+          2416
+        ]
+      ]
+    },
+    {
+      "path": "D:\\pathosurv-ml\\data\\raw_slides\\0073eb02-9fa3-47ff-97a0-4c9ea5b37eb6\\TCGA-DK-AA6T-01A-01-TS1.789B1AFB-6FA0-47A9-A8EF-797B0D29FDF0.svs",
+      "vendor": "aperio",
+      "objective": "40",
+      "dimensions": [
+        107567,
+        20542
+      ],
+      "level_count": 4,
+      "level_dimensions": [
+        [
+          107567,
+          20542
+        ],
+        [
+          26891,
+          5135
+        ],
+        [
+          6722,
+          1283
+        ],
+        [
+          3361,
+          641
+        ]
+      ]
+    }
+  ],
+  "errors": [],
+  "ok": true
+}

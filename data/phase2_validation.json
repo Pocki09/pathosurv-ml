@@ -1,8 +1,8 @@
 {
   "cohort": "TCGA-BLCA",
-  "manifest_path": "C:\\Users\\MinhHN46\\pathosurv-ml\\data\\gdc_manifest.2026-09-14.222309.txt",
-  "clinical_path": "C:\\Users\\MinhHN46\\pathosurv-ml\\data\\processed_metadata.csv",
-  "matched_cohort_path": "C:\\Users\\MinhHN46\\pathosurv-ml\\data\\matched_cohort.csv",
+  "manifest_path": "D:\\pathosurv-ml\\data\\gdc_manifest.2026-09-14.222309.txt",
+  "clinical_path": "D:\\pathosurv-ml\\data\\processed_metadata.csv",
+  "matched_cohort_path": "D:\\pathosurv-ml\\data\\matched_cohort.csv",
   "errors": [],
   "warnings": [
     "No WSI files in wsi_download_dir yet \u2014 run download_subset after gdc-client"

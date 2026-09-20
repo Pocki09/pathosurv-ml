@@ -34,9 +34,10 @@ def verify_subset(manifest_path: Path, download_dir: Path) -> dict:
         expected_md5 = str(row["md5"]).lower()
         local = download_dir / filename
         if not local.is_file():
-            # gdc-client may nest by uuid
-            alt = download_dir / file_id / filename
-            local = alt if alt.is_file() else local
+            from data_tools.wsi_paths import resolve_wsi_file
+
+            resolved = resolve_wsi_file(download_dir, file_id, filename)
+            local = resolved if resolved is not None else local
         if not local.is_file():
             results.append(
                 {

@@ -3,6 +3,7 @@ from pathlib import Path
 import pandas as pd
 
 from data_tools.gdc_manifest import filter_wsi_rows, read_gdc_manifest
+from data_tools.validate_final_manifest import validate_final_manifest_file
 from data_tools.validate_manifest import (
     validate_clinical_csv,
     validate_gdc_manifest,
@@ -49,3 +50,25 @@ def test_matched_cohort_has_survival_columns():
     df = pd.read_csv(cfg["matched_cohort_path"])
     assert (df["OS_time"] > 0).all()
     assert set(df["OS_event"].unique()).issubset({0, 1})
+
+
+def test_final_manifest_valid():
+    cfg = data_config()
+    path = Path(cfg["final_manifest_path"])
+    assert path.is_file(), "run: python scripts/run_phase3_pipeline.py"
+    assert validate_final_manifest_file(path) == []
+    df = pd.read_csv(path)
+    assert len(df) == df["case_id"].nunique()
+    assert (df["survival_time_days"] > 0).all()
+    assert set(df["event_status"].unique()).issubset({0, 1})
+    assert df["event_status"].sum() > 0
+
+
+def test_dataset_audit_present():
+    audit_path = project_root() / "data" / "dataset_audit.json"
+    assert audit_path.is_file()
+    import json
+
+    audit = json.loads(audit_path.read_text(encoding="utf-8"))
+    assert audit["validation"]["ok"] is True
+    assert audit["final_manifest_rows"] == audit["unique_cases"]

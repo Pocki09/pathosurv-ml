@@ -40,4 +40,8 @@ Smoke subset on disk: **3** `.svs` files under `data/raw_slides/` (~**2.15 GB** 
 
 ## Gate to Phase 3
 
-Phase 2 data artifacts and WSI smoke are **complete**. Next milestone: **Phase 3** — `final_manifest.csv`, `dataset_audit.json`, manifest validation tests.
+Phase 2 data artifacts and WSI smoke are **complete**.
+
+## Gate to Phase 4
+
+Phase 3 **`final_manifest.csv`** (359 patients) and **`dataset_audit.json`** are generated. Next: **Phase 4** — `create_patient_splits.py` and assign `split` column.

@@ -22,5 +22,13 @@
     "manifest_basename": "gdc_manifest.2026-09-14.222309.txt",
     "sha256": "d9c9cf6ac498477132a37678145066ef9c4ff9ad9f1b96491299622fcb92c0c7",
     "size_bytes": 4981749
+  },
+  {
+    "registered_at": "2026-09-20T03:52:43.431316+00:00",
+    "cohort": "TCGA-BLCA",
+    "manifest_path": "D:\\pathosurv-ml\\data\\gdc_manifest.2026-09-14.222309.txt",
+    "manifest_basename": "gdc_manifest.2026-09-14.222309.txt",
+    "sha256": "d9c9cf6ac498477132a37678145066ef9c4ff9ad9f1b96491299622fcb92c0c7",
+    "size_bytes": 4981749
   }
 ]

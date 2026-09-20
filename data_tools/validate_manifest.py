@@ -104,13 +104,30 @@ def run_validation(cfg: dict) -> dict:
     if matched_path.is_file():
         mcoh = pd.read_csv(matched_path)
         report["counts"]["matched_wsi_rows"] = len(mcoh)
-        if wsi_dir.is_dir() and list(wsi_dir.glob("*.svs")):
-            on_disk = sum((wsi_dir / fn).is_file() for fn in mcoh["filename"])
-            report["counts"]["wsi_files_on_disk"] = on_disk
-        else:
-            report["warnings"].append(
-                "No WSI files in wsi_download_dir yet — run download_subset after gdc-client"
-            )
+        if wsi_dir.is_dir():
+            on_disk = 0
+            for _, row in mcoh.iterrows():
+                fn = row["filename"]
+                fid = row["id"]
+                if (wsi_dir / fn).is_file() or (wsi_dir / fid / fn).is_file():
+                    on_disk += 1
+            subset_path = Path(cfg.get("subset_manifest_path", "data/subset_manifest.txt"))
+            smoke_on_disk = 0
+            if subset_path.is_file():
+                sub = pd.read_csv(subset_path, sep="\t")
+                for _, row in sub.iterrows():
+                    fn, fid = row["filename"], row["id"]
+                    if (wsi_dir / fn).is_file() or (wsi_dir / fid / fn).is_file():
+                        smoke_on_disk += 1
+                report["counts"]["smoke_wsi_on_disk"] = smoke_on_disk
+            if on_disk:
+                report["counts"]["wsi_files_on_disk"] = on_disk
+            elif smoke_on_disk:
+                report["counts"]["wsi_files_on_disk"] = smoke_on_disk
+            else:
+                report["warnings"].append(
+                    "No WSI files in wsi_download_dir yet — run download_subset after gdc-client"
+                )
 
     report["ok"] = len(report["errors"]) == 0
     return report

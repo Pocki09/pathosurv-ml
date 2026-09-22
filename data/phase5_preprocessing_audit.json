@@ -1,0 +1,68 @@
+{
+  "created_at": "2026-09-22T11:31:13.312721+00:00",
+  "backend": "openslide_baseline",
+  "config_file": "configs/preprocessing.yaml",
+  "slides_requested": 3,
+  "slides_processed": 3,
+  "slides": [
+    {
+      "slide_id": "TCGA-E7-A8O7-01A-01-TSA",
+      "case_id": null,
+      "wsi_path": "D:\\pathosurv-ml\\data\\raw_slides\\006d850b-7402-479f-890a-d16cdfb0d3cb\\TCGA-E7-A8O7-01A-01-TSA.A803F220-B487-44C0-832D-9D0B53F9CC79.svs",
+      "backend": "openslide_baseline",
+      "read_level": 0,
+      "objective_power": "40",
+      "dimensions_level0": [
+        145416,
+        39266
+      ],
+      "patch_size": 256,
+      "target_magnification": 20,
+      "accepted_patches": 200,
+      "rejected_patches": 4780,
+      "patch_manifest": "patch_coordinates.csv",
+      "thumbnail": "thumbnail.jpg",
+      "tissue_mask": "tissue_mask.png"
+    },
+    {
+      "slide_id": "TCGA-2F-A9KQ-01Z-00-DX1",
+      "case_id": "25eaf3f9-c364-423c-aaae-925e7b393afc",
+      "wsi_path": "D:\\pathosurv-ml\\data\\raw_slides\\007b7ccb-0aea-446c-ad8a-a373da529f25\\TCGA-2F-A9KQ-01Z-00-DX1.1C8CB2DD-5CC6-4E99-A0F9-32A0F598F5F9.svs",
+      "backend": "openslide_baseline",
+      "read_level": 0,
+      "objective_power": "40",
+      "dimensions_level0": [
+        110592,
+        77312
+      ],
+      "patch_size": 256,
+      "target_magnification": 20,
+      "accepted_patches": 200,
+      "rejected_patches": 367,
+      "patch_manifest": "patch_coordinates.csv",
+      "thumbnail": "thumbnail.jpg",
+      "tissue_mask": "tissue_mask.png"
+    },
+    {
+      "slide_id": "TCGA-DK-AA6T-01A-01-TS1",
+      "case_id": "f9b55748-605a-4313-bb19-dcf5476590c2",
+      "wsi_path": "D:\\pathosurv-ml\\data\\raw_slides\\0073eb02-9fa3-47ff-97a0-4c9ea5b37eb6\\TCGA-DK-AA6T-01A-01-TS1.789B1AFB-6FA0-47A9-A8EF-797B0D29FDF0.svs",
+      "backend": "openslide_baseline",
+      "read_level": 0,
+      "objective_power": "40",
+      "dimensions_level0": [
+        107567,
+        20542
+      ],
+      "patch_size": 256,
+      "target_magnification": 20,
+      "accepted_patches": 200,
+      "rejected_patches": 1236,
+      "patch_manifest": "patch_coordinates.csv",
+      "thumbnail": "thumbnail.jpg",
+      "tissue_mask": "tissue_mask.png"
+    }
+  ],
+  "errors": [],
+  "ok": true
+}

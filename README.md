@@ -2,7 +2,7 @@
 
 Research pipeline for **PathoSurv Lite**: TCGA whole-slide images → survival risk modeling (MergeSurv-inspired scope).
 
-**Current milestone:** Phase 1 (repository & environment) and **Phase 2** (cohort selection & GDC data) are implemented in this repo. Training phases (3+) are documented in `pathosurv_training_ai_requirement_vi.md` and will land in later work.
+**Current milestone:** Phase 1–5 (through WSI preprocessing smoke test). Phase 6+ (encoder, training) follow `plan/pathosurv_training_ai_requirement.md`.
 
 **Làm tại nhà (đóng Phase 2):** xem [docs/HUONG_DAN_LAM_TAI_NHA.md](docs/HUONG_DAN_LAM_TAI_NHA.md) — lệnh từng bước và output mong đợi.
 
@@ -59,6 +59,62 @@ python -m data_tools.download_subset -n 3
 python -m data_tools.verify_downloads
 python -m preprocessing.validate_wsi
 ```
+
+## Phase 3 — final survival manifest
+
+Requires Phase 2 artifacts (`matched_cohort.csv`).
+
+```bash
+python scripts/run_phase3_pipeline.py
+```
+
+Outputs:
+
+| File | Role |
+|------|------|
+| `data/final_manifest.csv` | One diagnostic WSI per patient; `split` assigned in Phase 4 |
+| `data/dataset_audit.json` | Excluded duplicate slides + validation summary |
+
+Validate only:
+
+```bash
+python -m data_tools.validate_final_manifest
+python -m data_tools.validate_final_manifest --require-split
+python -m data_tools.validate_final_manifest --require-wsi  # all wsi_path must exist on disk
+```
+
+## Phase 4 — patient-level splits
+
+Requires `data/final_manifest.csv` from Phase 3.
+
+```bash
+python scripts/run_phase4_pipeline.py
+```
+
+Outputs:
+
+| File | Role |
+|------|------|
+| `data/splits.json` | Train/validation/test case lists + event counts per split |
+| `data/final_manifest.csv` | Updated `split` column (stratified on `event_status`, seed from `configs/data.yaml`) |
+
+Ratios in `configs/training.yaml` → `split.test_ratio` / `split.validation_ratio` (default 15% / 15%).
+
+## Phase 5 — WSI preprocessing smoke test
+
+Requires OpenSlide + OpenCV (`pip install -e ".[wsi]"`) and WSI files from Phase 2 smoke download.
+
+```bash
+python scripts/run_phase5_pipeline.py
+```
+
+| Output | Role |
+|--------|------|
+| `data/preprocessed/<slide_id>/` | Thumbnail, tissue mask, `patch_coordinates.csv`, `slide_report.json` |
+| `data/phase5_preprocessing_audit.json` | Per-slide accepted/rejected counts |
+| `data/phase5_patch_verify.json` | OpenSlide re-read check on sample coordinates |
+
+Config: `configs/preprocessing.yaml` (`backend: openslide_baseline`; TRIDENT can replace runner later).
 
 ## Google Colab
 

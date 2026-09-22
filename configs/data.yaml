@@ -19,6 +19,8 @@ subset_manifest_path: data/subset_manifest.txt
 wsi_download_dir: data/raw_slides
 download_audit_path: data/download_audit.json
 manifest_registry_path: data/manifest_registry.json
+preprocessed_dir: data/preprocessed
+phase5_audit_path: data/phase5_preprocessing_audit.json
 
 # Smoke-test subset size (Phase 2: 3–10 WSI)
 smoke_test_wsi_count: 3

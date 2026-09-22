@@ -11,6 +11,7 @@ build/
 # Large / local-only data (keep manifests and small CSVs tracked as needed)
 data/raw_slides/
 data/features/
+data/preprocessed/
 *.svs
 
 # Environment overrides

@@ -18,7 +18,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7.4", "jupyter>=1.0"]
-wsi = ["openslide-python>=1.3"]
+wsi = ["openslide-python>=1.3", "opencv-python-headless>=4.8", "Pillow>=10.0"]
 
 [tool.setuptools.packages.find]
 where = ["."]

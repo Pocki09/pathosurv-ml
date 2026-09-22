@@ -62,6 +62,19 @@ def test_final_manifest_valid():
     assert (df["survival_time_days"] > 0).all()
     assert set(df["event_status"].unique()).issubset({0, 1})
     assert df["event_status"].sum() > 0
+    assert set(df["split"].unique()) == {"train", "validation", "test"}
+
+
+def test_splits_json_valid():
+    import json
+
+    cfg = data_config()
+    splits_path = Path(cfg["splits_path"])
+    assert splits_path.is_file(), "run: python scripts/run_phase4_pipeline.py"
+    report = json.loads(splits_path.read_text(encoding="utf-8"))
+    assert report["seed"] == 42
+    total = sum(report["splits"][k]["case_count"] for k in ("train", "validation", "test"))
+    assert total == report["total_cases"]
 
 
 def test_dataset_audit_present():

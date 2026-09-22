@@ -2,6 +2,7 @@
 
 import pandas as pd
 
+from data_tools.create_patient_splits import assign_patient_splits
 from data_tools.build_final_manifest import select_one_slide_per_case
 from data_tools.slide_selection import slide_selection_rank
 from data_tools.validate_final_manifest import validate_final_manifest_df
@@ -56,3 +57,22 @@ def test_validate_final_manifest_rejects_bad_event():
     )
     errors = validate_final_manifest_df(df)
     assert any("event_status" in e for e in errors)
+
+
+def test_patient_splits_reproducible_and_cover_all_cases():
+    df = pd.DataFrame(
+        {
+            "case_id": [f"c{i}" for i in range(40)],
+            "slide_id": [f"s{i}" for i in range(40)],
+            "wsi_path": [f"p{i}.svs" for i in range(40)],
+            "survival_time_days": [100.0] * 40,
+            "event_status": [i % 2 for i in range(40)],
+            "split": [""] * 40,
+        }
+    )
+    a = assign_patient_splits(df, seed=42, test_ratio=0.15, validation_ratio=0.15)
+    b = assign_patient_splits(df, seed=42, test_ratio=0.15, validation_ratio=0.15)
+    assert a["split"].tolist() == b["split"].tolist()
+    assert set(a["split"]) == {"train", "validation", "test"}
+    assert a["case_id"].nunique() == len(a)
+    assert validate_final_manifest_df(a, require_split_assigned=True) == []

@@ -14,6 +14,7 @@ output_csv: data/processed_metadata.csv
 matched_cohort_path: data/matched_cohort.csv
 final_manifest_path: data/final_manifest.csv
 dataset_audit_path: data/dataset_audit.json
+splits_path: data/splits.json
 subset_manifest_path: data/subset_manifest.txt
 wsi_download_dir: data/raw_slides
 download_audit_path: data/download_audit.json

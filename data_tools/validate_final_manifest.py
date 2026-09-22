@@ -18,6 +18,8 @@ FINAL_MANIFEST_COLUMNS = (
     "split",
 )
 
+ALLOWED_SPLITS = frozenset({"train", "validation", "test"})
+
 
 def validate_final_manifest_df(
     df: pd.DataFrame,
@@ -60,6 +62,9 @@ def validate_final_manifest_df(
         blank = df["split"].astype(str).str.strip() == ""
         if blank.any():
             errors.append(f"split must be assigned: {int(blank.sum())} blank rows")
+        bad_split = ~df["split"].isin(ALLOWED_SPLITS)
+        if bad_split.any():
+            errors.append(f"Invalid split labels: {int(bad_split.sum())} row(s)")
 
     if require_wsi_on_disk:
         root = project_root()

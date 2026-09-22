@@ -32,6 +32,7 @@ def data_config() -> dict[str, Any]:
             "matched_cohort_path",
             "final_manifest_path",
             "dataset_audit_path",
+            "splits_path",
             "wsi_manifest_path",
             "wsi_download_dir",
             "subset_manifest_path",

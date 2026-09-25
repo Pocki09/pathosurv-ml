@@ -3,6 +3,10 @@ optimizer: AdamW
 early_stopping_metric: validation_c_index
 max_epochs: 100
 seed: 42
+learning_rate: 1.0e-4
+weight_decay: 1.0e-4
+patience: 15
+batch_size: 8
 
 # Phase 4 — patient-level split (stratified on event_status; must sum to < 1.0 with train implicit)
 split:

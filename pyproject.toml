@@ -13,6 +13,7 @@ dependencies = [
     "pandas>=2.0",
     "pyyaml>=6.0",
     "torch>=2.0",
+    "torchvision>=0.15",
     "scikit-survival>=0.22",
 ]
 
@@ -22,7 +23,7 @@ wsi = ["openslide-python>=1.3", "opencv-python-headless>=4.8", "Pillow>=10.0"]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["pathosurv*", "data_tools*"]
+include = ["pathosurv*", "data_tools*", "models*", "losses*", "evaluation*", "training*", "packaging*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

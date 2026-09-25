@@ -20,6 +20,10 @@ wsi_download_dir: data/raw_slides
 download_audit_path: data/download_audit.json
 manifest_registry_path: data/manifest_registry.json
 preprocessed_dir: data/preprocessed
+features_dir: data/features
+embedding_audit_path: data/embedding_audit.json
+checkpoints_dir: data/checkpoints
+model_package_dir: data/model_packages
 phase5_audit_path: data/phase5_preprocessing_audit.json
 
 # Smoke-test subset size (Phase 2: 3–10 WSI)

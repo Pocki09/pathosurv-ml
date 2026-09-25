@@ -1,0 +1,7 @@
+{
+  "split": "test",
+  "model_name": "attention_mil_cox",
+  "case_count": 0,
+  "event_count": 0,
+  "c_index": NaN
+}

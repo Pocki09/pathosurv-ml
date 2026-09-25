@@ -1,0 +1,18 @@
+{
+  "reference_split": "validation",
+  "sample_count": 6,
+  "risk_score_summary": {
+    "min": -0.06946021318435669,
+    "p25": -0.060903383418917656,
+    "median": -0.019640351179987192,
+    "p75": 0.020224340027198195,
+    "max": 0.0826280415058136
+  },
+  "risk_group_thresholds": {
+    "method": "validation_quantiles",
+    "low_to_medium": -0.060903383418917656,
+    "medium_to_high": 0.020224340027198195
+  },
+  "model_name": "attention_mil_cox",
+  "encoder_id": "resnet50_imagenet"
+}

@@ -2,7 +2,7 @@
 
 Research pipeline for **PathoSurv Lite**: TCGA whole-slide images → survival risk modeling (MergeSurv-inspired scope).
 
-**Current milestone:** Phase 1–5 (through WSI preprocessing smoke test). Phase 6+ (encoder, training) follow `plan/pathosurv_training_ai_requirement.md`.
+**Current milestone:** Phase 1–14 code paths (data → preprocessing → train/package). Full cohort train needs WSI download + Colab GPU — see [docs/HUONG_DAN_HUAN_LUYEN.md](docs/HUONG_DAN_HUAN_LUYEN.md).
 
 **Làm tại nhà (đóng Phase 2):** xem [docs/HUONG_DAN_LAM_TAI_NHA.md](docs/HUONG_DAN_LAM_TAI_NHA.md) — lệnh từng bước và output mong đợi.
 
@@ -114,11 +114,11 @@ python scripts/run_phase5_pipeline.py
 | `data/phase5_preprocessing_audit.json` | Per-slide accepted/rejected counts |
 | `data/phase5_patch_verify.json` | OpenSlide re-read check on sample coordinates |
 
-Config: `configs/preprocessing.yaml` (`backend: openslide_baseline`; TRIDENT can replace runner later).
+Phase 5–14 (training): see [docs/HUONG_DAN_HUAN_LUYEN.md](docs/HUONG_DAN_HUAN_LUYEN.md). Smoke: `python scripts/run_phases_6_14_smoke.py`.
 
 ## Google Colab
 
-Open [notebooks/00_colab_smoke_test.ipynb](notebooks/00_colab_smoke_test.ipynb): clone this repo, `pip install -e .`, run the same validation commands. Mount Google Drive only for **data and checkpoints**, not for source code.
+Open [notebooks/00_colab_smoke_test.ipynb](notebooks/00_colab_smoke_test.ipynb): clone this repo, `pip install -e ".[dev,wsi]"`, run validation/training commands. Mount Google Drive only for **data and checkpoints**, not for source code.
 
 ## Configuration
 

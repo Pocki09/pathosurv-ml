@@ -1,4 +1,5 @@
 # Phase 8–9 — survival heads (not used in Phase 2)
 primary_model: attention_mil_cox
 baseline_model: mean_pooling_cox
-embedding_dim: null
+embedding_dim: 2048
+attention_hidden_dim: 256

@@ -42,6 +42,7 @@ Smoke subset on disk: **3** `.svs` files under `data/raw_slides/` (~**2.15 GB** 
 
 Phase 2 data artifacts and WSI smoke are **complete**.
 
-## Gate to Phase 4
+## Gate to deployment (PathoSurv Lite web)
 
-Phase 3 **`final_manifest.csv`** (359 patients) and **`dataset_audit.json`** are generated. Next: **Phase 4** — `create_patient_splits.py` and assign `split` column.
+Smoke train + model package path verified locally (`data/model_packages/pathosurv-model-v1/`).  
+**Full BLCA training** still requires downloading WSI for ~359 cases and Colab GPU — follow [HUONG_DAN_HUAN_LUYEN.md](HUONG_DAN_HUAN_LUYEN.md).

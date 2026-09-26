@@ -8,12 +8,32 @@ __pycache__/
 dist/
 build/
 
-# Large / local-only data (keep manifests and small CSVs tracked as needed)
+# Large / local-only data
 data/raw_slides/
+data/raw_slides_quarantine/
 data/features/
 data/preprocessed/
 *.svs
+data/checkpoints/
+data/model_packages/
+
+# Regeneratable smoke / pipeline audits (keep cohort CSV/JSON in Git)
+data/embedding_audit.json
+data/metrics_test.json
+data/patch_verify.json
+data/reference_statistics.json
+data/wsi_open_test.json
+data/wsi_preprocessing_audit.json
+
+# Local-only manifests / resync helpers
+data/subset_manifest_*.txt
+data/resync_*.txt
+data/phase2_validation.json
+data/phase5_*
 
 # Environment overrides
 .env
 .env.local
+
+# Optional local planning copies (SRS lives in issue/wiki if needed)
+plan/

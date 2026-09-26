@@ -10,7 +10,7 @@ This repository is **not** the PathoSurv Lite web application. There is **no HTT
 
 **Research scope:** MergeSurv-inspired survival risk from WSI (patch embeddings → slide aggregator → Cox head). Training is intended to run locally or on **Google Colab** with GPU; large binaries stay out of Git (see `.gitignore`).
 
-Further detail (Vietnamese): [docs/HUONG_DAN_HUAN_LUYEN.md](docs/HUONG_DAN_HUAN_LUYEN.md), [docs/WORKFLOW.md](docs/WORKFLOW.md), [docs/GDC_DATA_GUIDE.md](docs/GDC_DATA_GUIDE.md).
+Further detail (Vietnamese): [docs/HUONG_DAN_HUAN_LUYEN.md](docs/HUONG_DAN_HUAN_LUYEN.md), [docs/WORKFLOW.md](docs/WORKFLOW.md), [docs/GDC_DATA_GUIDE.md](docs/GDC_DATA_GUIDE.md). Clone/Colab checklist: [docs/REPO_READINESS.md](docs/REPO_READINESS.md).
 
 ---
 
@@ -145,13 +145,15 @@ python -m data_tools.verify_downloads
 
 Manual prerequisites: `data/clinical.json`, versioned `data/gdc_manifest.*.txt`, `configs/data.yaml` → `manifest_path`. See [docs/GDC_DATA_GUIDE.md](docs/GDC_DATA_GUIDE.md).
 
-Optional WSI download:
+Optional WSI download (smoke: align slides with `final_manifest.csv` — do **not** use bare `-n 3` only):
 
 ```bash
-python -m data_tools.download_subset -n 3
+python -m data_tools.download_subset --from-final-manifest -n 3
 python -m data_tools.verify_downloads
 python -m preprocessing.validate_wsi
 ```
+
+Full cohort manifest (no download): `--from-final-manifest -n 359 --no-download --output-manifest data/cohort_wsi_manifest.txt`
 
 ### 2. Training manifest and splits
 

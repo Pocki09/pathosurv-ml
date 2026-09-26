@@ -1,6 +1,0 @@
-# Frozen pathology encoder (package snapshot)
-encoder_id: TITAN
-encoder_version: pending_access
-fallback_encoder_id: resnet50_imagenet
-freeze: true
-embedding_dim: 2048

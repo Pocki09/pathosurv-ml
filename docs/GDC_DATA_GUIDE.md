@@ -42,7 +42,7 @@ python -m data_tools.validate_manifest
 Install [GDC Data Transfer Tool](https://gdc.cancer.gov/access-data/gdc-data-transfer-tool) (`gdc-client` on PATH).
 
 ```bash
-python -m data_tools.download_subset -n 3
+python -m data_tools.download_subset --from-final-manifest -n 3
 python -m data_tools.verify_downloads
 pip install openslide-python  # or pip install -e ".[wsi]"
 python -m preprocessing.validate_wsi

@@ -1,33 +1,17 @@
 {
-  "verified_at": "2026-09-20T03:52:54.119466+00:00",
-  "manifest_path": "D:\\pathosurv-ml\\data\\subset_manifest.txt",
+  "verified_at": "2026-09-26T04:18:41.659861+00:00",
+  "manifest_path": "data\\subset_manifest_e7_dx1.txt",
   "download_dir": "D:\\pathosurv-ml\\data\\raw_slides",
-  "file_count": 3,
-  "ok_count": 3,
+  "file_count": 1,
+  "ok_count": 1,
   "files": [
     {
-      "id": "006d850b-7402-479f-890a-d16cdfb0d3cb",
-      "filename": "TCGA-E7-A8O7-01A-01-TSA.A803F220-B487-44C0-832D-9D0B53F9CC79.svs",
-      "path": "D:\\pathosurv-ml\\data\\raw_slides\\006d850b-7402-479f-890a-d16cdfb0d3cb\\TCGA-E7-A8O7-01A-01-TSA.A803F220-B487-44C0-832D-9D0B53F9CC79.svs",
+      "id": "323fd3a2-9547-4745-956f-4958e5d84a1d",
+      "filename": "TCGA-E7-A8O7-01Z-00-DX1.E3D79C43-608D-40A1-9F65-0414FDF27741.svs",
+      "path": "D:\\pathosurv-ml\\data\\raw_slides\\323fd3a2-9547-4745-956f-4958e5d84a1d\\TCGA-E7-A8O7-01Z-00-DX1.E3D79C43-608D-40A1-9F65-0414FDF27741.svs",
       "status": "ok",
-      "expected_md5": "90029bf743d8a5e8ec6e0c5c1b28b330",
-      "actual_md5": "90029bf743d8a5e8ec6e0c5c1b28b330"
-    },
-    {
-      "id": "007b7ccb-0aea-446c-ad8a-a373da529f25",
-      "filename": "TCGA-2F-A9KQ-01Z-00-DX1.1C8CB2DD-5CC6-4E99-A0F9-32A0F598F5F9.svs",
-      "path": "D:\\pathosurv-ml\\data\\raw_slides\\007b7ccb-0aea-446c-ad8a-a373da529f25\\TCGA-2F-A9KQ-01Z-00-DX1.1C8CB2DD-5CC6-4E99-A0F9-32A0F598F5F9.svs",
-      "status": "ok",
-      "expected_md5": "1b5fbdcd521879ad479cbab08b45b152",
-      "actual_md5": "1b5fbdcd521879ad479cbab08b45b152"
-    },
-    {
-      "id": "0073eb02-9fa3-47ff-97a0-4c9ea5b37eb6",
-      "filename": "TCGA-DK-AA6T-01A-01-TS1.789B1AFB-6FA0-47A9-A8EF-797B0D29FDF0.svs",
-      "path": "D:\\pathosurv-ml\\data\\raw_slides\\0073eb02-9fa3-47ff-97a0-4c9ea5b37eb6\\TCGA-DK-AA6T-01A-01-TS1.789B1AFB-6FA0-47A9-A8EF-797B0D29FDF0.svs",
-      "status": "ok",
-      "expected_md5": "c2276e27bf8f8af289b3a422f60159bb",
-      "actual_md5": "c2276e27bf8f8af289b3a422f60159bb"
+      "expected_md5": "b0eae4bee57b87b50494ed4d0020e191",
+      "actual_md5": "b0eae4bee57b87b50494ed4d0020e191"
     }
   ]
 }

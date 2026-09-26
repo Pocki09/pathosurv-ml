@@ -12,7 +12,7 @@
 - `smoke_test_wsi_count` (default 3) and `random_seed: 42` live in `configs/data.yaml`.
 
 ## Pipelines (order matters)
-- GDC cohort: `python scripts/run_gdc_cohort_pipeline.py` (runs `cohort_comparison → register_manifest → build_clinical_manifest → build_slide_manifest → merge_survival_manifest → validate_manifest → download_subset --no-download → verify_downloads`). Then real download: `python -m data_tools.download_subset -n 3`, `python -m data_tools.verify_downloads`, `python -m preprocessing.validate_wsi`.
+- GDC cohort: `python scripts/run_gdc_cohort_pipeline.py` (runs `cohort_comparison → register_manifest → build_clinical_manifest → build_slide_manifest → merge_survival_manifest → validate_manifest → download_subset --no-download → verify_downloads`). Then real download: `python -m data_tools.download_subset --from-final-manifest -n 3`, `python -m data_tools.verify_downloads`, `python -m preprocessing.validate_wsi`.
 - Final manifest (needs `data/matched_cohort.csv`): `python scripts/run_final_manifest_pipeline.py` → `data/final_manifest.csv` (one row per `case_id`, `split` empty until splits) + `data/dataset_audit.json`. Validate-only: `python -m data_tools.validate_final_manifest [--require-wsi]`.
 - Patient splits: `python scripts/run_patient_splits_pipeline.py` → assigns `split` in `final_manifest.csv` + `data/splits.json`. Validate: `python -m data_tools.validate_final_manifest --require-split`.
 - WSI preprocessing: `pip install -e ".[wsi]"` then `python scripts/run_wsi_preprocess_pipeline.py` → `data/wsi_preprocessing_audit.json` + artifacts under `data/preprocessed/` (gitignored). OpenSlide baseline until TRIDENT is wired in `preprocessing/run_trident.py`.

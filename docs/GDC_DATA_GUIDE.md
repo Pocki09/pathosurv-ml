@@ -1,8 +1,8 @@
-# GDC data acquisition (Phase 2)
+# GDC data acquisition
 
 ## 1. Cohort
 
-PathoSurv Lite v1 uses **TCGA-BLCA**. Rationale: `docs/feasibility/cohort_comparison.json` (generate with `python -m data_tools.cohort_comparison`).
+PathoSurv Lite v1 uses **TCGA-BLCA**. Rationale: `data/cohort_comparison.json` (generate with `python -m data_tools.cohort_comparison`).
 
 ## 2. Clinical metadata
 
@@ -26,7 +26,7 @@ PathoSurv Lite v1 uses **TCGA-BLCA**. Rationale: `docs/feasibility/cohort_compar
 
 ```bash
 pip install -e ".[dev]"
-python scripts/run_phase2_pipeline.py
+python scripts/run_gdc_cohort_pipeline.py
 ```
 
 Or step by step:
@@ -57,4 +57,6 @@ WSI files land under `data/raw_slides/` (gitignored).
 | `data/manifest_registry.json` | sha256 of GDC manifest |
 | `data/subset_manifest.txt` | UUID/md5 for smoke subset |
 | `data/download_audit.json` | per-file md5 after download |
-| `data/phase2_validation.json` | validation summary |
+| `data/cohort_validation.json` | cohort ETL validation summary |
+
+See also [WORKFLOW.md](WORKFLOW.md) and [README.md](../README.md).

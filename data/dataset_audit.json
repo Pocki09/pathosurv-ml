@@ -3177,7 +3177,7 @@
   },
   "notes": [
     "One diagnostic WSI per case_id (see slide_selection.py).",
-    "split is empty until Phase 4 patient-level splits.",
+    "split is empty until patient-level splits are assigned.",
     "wsi_path may not exist on disk until WSI download completes."
   ]
 }

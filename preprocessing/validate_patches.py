@@ -56,12 +56,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Verify patch coordinates against OpenSlide")
     parser.add_argument("--preprocessed-dir", type=Path)
     parser.add_argument("--download-dir", type=Path)
-    parser.add_argument("--report", type=Path, default=Path("data/phase5_patch_verify.json"))
+    parser.add_argument("--report", type=Path, default=None)
     args = parser.parse_args()
 
     cfg = data_config()
     pre_root = args.preprocessed_dir or Path(cfg["preprocessed_dir"])
     download_dir = args.download_dir or Path(cfg["wsi_download_dir"])
+    report_path = args.report or Path(cfg["patch_verify_path"])
 
     results = []
     for slide_dir in sorted(pre_root.iterdir()) if pre_root.is_dir() else []:
@@ -85,11 +86,11 @@ def main() -> None:
         )
 
     report = {"slides": results, "ok": all(r.get("ok") for r in results) and len(results) > 0}
-    args.report.parent.mkdir(parents=True, exist_ok=True)
-    args.report.write_text(json.dumps(report, indent=2), encoding="utf-8")
+    report_path.parent.mkdir(parents=True, exist_ok=True)
+    report_path.write_text(json.dumps(report, indent=2), encoding="utf-8")
     if not report["ok"]:
         raise SystemExit(1)
-    logger.info("Patch verify OK → %s", args.report)
+    logger.info("Patch verify OK → %s", report_path)
 
 
 if __name__ == "__main__":

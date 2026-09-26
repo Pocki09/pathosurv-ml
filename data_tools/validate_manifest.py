@@ -1,4 +1,4 @@
-"""Validate Phase 2 artifacts (GDC manifest, clinical CSV, matched cohort)."""
+"""Validate GDC cohort artifacts (manifest, clinical CSV, matched cohort)."""
 
 from __future__ import annotations
 
@@ -134,18 +134,18 @@ def run_validation(cfg: dict) -> dict:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Validate Phase 2 data artifacts")
+    parser = argparse.ArgumentParser(description="Validate GDC cohort data artifacts")
     parser.add_argument(
         "--report",
         type=Path,
         default=None,
-        help="Write JSON report (default: data/phase2_validation.json)",
+        help="Write JSON report (default: cohort_validation_path from configs/data.yaml)",
     )
     args = parser.parse_args()
 
     cfg = data_config()
     report = run_validation(cfg)
-    out = args.report or Path("data/phase2_validation.json")
+    out = args.report or Path(cfg["cohort_validation_path"])
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(report, indent=2), encoding="utf-8")
 

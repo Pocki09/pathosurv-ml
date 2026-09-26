@@ -1,8 +1,8 @@
 """
 Build patient-level clinical table with overall survival fields from GDC Cases JSON.
 
-Phase 2: produces ``processed_metadata.csv`` with OS_time / OS_event for merging with WSI.
-Phase 3 will rename columns to survival_time_days / event_status in final_manifest.
+Produces ``processed_metadata.csv`` with OS_time / OS_event for merging with WSI.
+``build_final_manifest`` renames columns to survival_time_days / event_status in final_manifest.
 """
 
 from __future__ import annotations

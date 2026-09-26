@@ -1,0 +1,188 @@
+{
+  "slides": [
+    {
+      "slide_id": "TCGA-2F-A9KQ-01Z-00-DX1",
+      "ok": true,
+      "checks": [
+        {
+          "x": 32768,
+          "y": 512,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.0
+        },
+        {
+          "x": 30720,
+          "y": 0,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.0
+        },
+        {
+          "x": 59904,
+          "y": 0,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.0
+        },
+        {
+          "x": 11776,
+          "y": 1024,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.0
+        },
+        {
+          "x": 71168,
+          "y": 512,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "slide_id": "TCGA-DK-AA6T-01A-01-TS1",
+      "ok": true,
+      "checks": [
+        {
+          "x": 32320,
+          "y": 3984,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.2193
+        },
+        {
+          "x": 34880,
+          "y": 2960,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.3408
+        },
+        {
+          "x": 23104,
+          "y": 3472,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.6564
+        },
+        {
+          "x": 34368,
+          "y": 4496,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.6597
+        },
+        {
+          "x": 18496,
+          "y": 4496,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.412
+        }
+      ]
+    },
+    {
+      "slide_id": "TCGA-E7-A8O7-01A-01-TSA",
+      "ok": true,
+      "checks": [
+        {
+          "x": 124048,
+          "y": 7840,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.289
+        },
+        {
+          "x": 125584,
+          "y": 5280,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.3112
+        },
+        {
+          "x": 128656,
+          "y": 5792,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.3854
+        },
+        {
+          "x": 118928,
+          "y": 8864,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.2589
+        },
+        {
+          "x": 123024,
+          "y": 8352,
+          "level": 0,
+          "shape": [
+            256,
+            256,
+            3
+          ],
+          "white_fraction": 0.2123
+        }
+      ]
+    }
+  ],
+  "ok": true
+}

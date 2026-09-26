@@ -1,5 +1,5 @@
 """
-Phase 5 entry point for WSI preprocessing.
+WSI preprocessing entry point.
 
 Uses OpenSlide + OpenCV baseline (`backend: openslide_baseline` in configs/preprocessing.yaml).
 When TRIDENT is installed and validated, this module can delegate to TRIDENT without
@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Phase 5 WSI preprocessing smoke test")
+    parser = argparse.ArgumentParser(description="WSI preprocessing smoke test (OpenSlide baseline)")
     parser.add_argument("--manifest", type=Path, help="Subset GDC manifest (tab-separated)")
     parser.add_argument("--download-dir", type=Path)
     parser.add_argument("--output-dir", type=Path)
@@ -33,7 +33,7 @@ def main() -> None:
     download_dir = args.download_dir or Path(cfg_data["wsi_download_dir"])
     pre_cfg = load_preprocessing_config()
     output_root = args.output_dir or Path(cfg_data["preprocessed_dir"])
-    audit_path = args.audit or Path(cfg_data["phase5_audit_path"])
+    audit_path = args.audit or Path(cfg_data["wsi_preprocessing_audit_path"])
     final_manifest = Path(cfg_data.get("final_manifest_path", ""))
 
     audit = run_smoke_preprocessing(
@@ -47,9 +47,9 @@ def main() -> None:
     audit_path.write_text(json.dumps(audit, indent=2), encoding="utf-8")
 
     if not audit["ok"]:
-        logger.error("Phase 5 preprocessing incomplete: %s", audit["errors"])
+        logger.error("WSI preprocessing incomplete: %s", audit["errors"])
         raise SystemExit(1)
-    logger.info("Phase 5 audit written: %s (%d slides)", audit_path, audit["slides_processed"])
+    logger.info("Preprocessing audit written: %s (%d slides)", audit_path, audit["slides_processed"])
 
 
 if __name__ == "__main__":

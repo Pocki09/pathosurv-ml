@@ -1,4 +1,4 @@
-"""Build Phase 3 final_manifest.csv (one diagnostic WSI per patient) and dataset audit."""
+"""Build final_manifest.csv (one diagnostic WSI per patient) and dataset audit."""
 
 from __future__ import annotations
 
@@ -102,7 +102,7 @@ def build_dataset_audit(
         "validation": {"ok": len(validation_errors) == 0, "errors": validation_errors},
         "notes": [
             "One diagnostic WSI per case_id (see slide_selection.py).",
-            "split is empty until Phase 4 patient-level splits.",
+            "split is empty until patient-level splits are assigned.",
             "wsi_path may not exist on disk until WSI download completes.",
         ],
     }
@@ -140,7 +140,7 @@ def run_build(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Build Phase 3 final survival manifest")
+    parser = argparse.ArgumentParser(description="Build final survival manifest (one slide per patient)")
     parser.add_argument("--matched", type=Path)
     parser.add_argument("--download-dir", type=Path)
     parser.add_argument("--output", type=Path)

@@ -1,4 +1,4 @@
-# Phase 6+ — frozen pathology encoder (not used in Phase 2)
+# Frozen pathology encoder (TITAN target; ResNet50 ImageNet fallback in code today)
 encoder_id: TITAN
 encoder_version: pending_access
 fallback_encoder_id: resnet50_imagenet

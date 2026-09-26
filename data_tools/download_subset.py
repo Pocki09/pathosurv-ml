@@ -1,7 +1,7 @@
 """
 Create a GDC subset manifest and optionally invoke gdc-client.
 
-Phase 2: download 3–10 WSI for smoke test before full cohort download.
+Download 3–10 WSI for smoke test before full cohort download.
 """
 
 from __future__ import annotations

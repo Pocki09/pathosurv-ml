@@ -1,5 +1,5 @@
 """
-Document TCGA cohort trade-offs for PathoSurv Lite Phase 2.
+Document TCGA cohort trade-offs for PathoSurv Lite v1 cohort selection.
 
 Estimates are indicative (GDC portal counts change over time). Re-run GDC filters
 to refresh before production downloads.
@@ -84,11 +84,14 @@ def build_report() -> dict:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Write cohort comparison JSON for Phase 2")
+    from pathosurv.config import data_config
+
+    parser = argparse.ArgumentParser(description="Write cohort comparison JSON")
+    cfg = data_config()
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path("docs/feasibility/cohort_comparison.json"),
+        default=Path(cfg["cohort_comparison_path"]),
     )
     args = parser.parse_args()
     args.output.parent.mkdir(parents=True, exist_ok=True)

@@ -1,4 +1,4 @@
-"""Validate Phase 3 ``final_manifest.csv`` schema and consistency rules."""
+"""Validate ``final_manifest.csv`` schema and consistency rules."""
 
 from __future__ import annotations
 
@@ -102,7 +102,7 @@ def main() -> None:
 
     from pathosurv.config import data_config
 
-    parser = argparse.ArgumentParser(description="Validate Phase 3 final_manifest.csv")
+    parser = argparse.ArgumentParser(description="Validate final_manifest.csv")
     parser.add_argument("--manifest", type=Path)
     parser.add_argument("--require-wsi", action="store_true")
     parser.add_argument("--require-split", action="store_true")

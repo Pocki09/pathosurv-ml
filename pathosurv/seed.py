@@ -1,4 +1,4 @@
-"""Reproducibility helpers (torch optional for Phase 2 data-only workflows)."""
+"""Reproducibility helpers (torch optional for data-only workflows)."""
 
 import random
 

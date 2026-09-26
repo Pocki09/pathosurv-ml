@@ -55,7 +55,7 @@ def test_matched_cohort_has_survival_columns():
 def test_final_manifest_valid():
     cfg = data_config()
     path = Path(cfg["final_manifest_path"])
-    assert path.is_file(), "run: python scripts/run_phase3_pipeline.py"
+    assert path.is_file(), "run: python scripts/run_final_manifest_pipeline.py"
     assert validate_final_manifest_file(path) == []
     df = pd.read_csv(path)
     assert len(df) == df["case_id"].nunique()
@@ -70,7 +70,7 @@ def test_splits_json_valid():
 
     cfg = data_config()
     splits_path = Path(cfg["splits_path"])
-    assert splits_path.is_file(), "run: python scripts/run_phase4_pipeline.py"
+    assert splits_path.is_file(), "run: python scripts/run_patient_splits_pipeline.py"
     report = json.loads(splits_path.read_text(encoding="utf-8"))
     assert report["seed"] == 42
     total = sum(report["splits"][k]["case_count"] for k in ("train", "validation", "test"))

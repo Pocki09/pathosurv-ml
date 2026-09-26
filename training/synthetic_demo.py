@@ -1,4 +1,4 @@
-"""Generate synthetic embedding bags for pipeline smoke (Phase 8–9 without full WSI cohort)."""
+"""Generate synthetic embedding bags for pipeline smoke without full WSI cohort."""
 
 from __future__ import annotations
 

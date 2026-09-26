@@ -1,4 +1,4 @@
-"""Unit tests for Phase 5 preprocessing helpers."""
+"""Unit tests for preprocessing helpers."""
 
 import numpy as np
 

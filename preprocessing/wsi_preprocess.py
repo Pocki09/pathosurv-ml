@@ -1,4 +1,4 @@
-"""OpenSlide + OpenCV WSI preprocessing baseline (Phase 5 smoke test)."""
+"""OpenSlide + OpenCV WSI preprocessing baseline."""
 
 from __future__ import annotations
 

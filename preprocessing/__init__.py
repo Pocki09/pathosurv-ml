@@ -1,1 +1,1 @@
-"""WSI preprocessing and validation (Phase 5+)."""
+"""WSI preprocessing and validation."""

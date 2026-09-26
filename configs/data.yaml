@@ -19,12 +19,15 @@ subset_manifest_path: data/subset_manifest.txt
 wsi_download_dir: data/raw_slides
 download_audit_path: data/download_audit.json
 manifest_registry_path: data/manifest_registry.json
+cohort_validation_path: data/cohort_validation.json
+cohort_comparison_path: data/cohort_comparison.json
 preprocessed_dir: data/preprocessed
 features_dir: data/features
 embedding_audit_path: data/embedding_audit.json
 checkpoints_dir: data/checkpoints
 model_package_dir: data/model_packages
-phase5_audit_path: data/phase5_preprocessing_audit.json
+wsi_preprocessing_audit_path: data/wsi_preprocessing_audit.json
+patch_verify_path: data/patch_verify.json
 
-# Smoke-test subset size (Phase 2: 3–10 WSI)
+# Smoke-test subset size (3–10 WSI for local download smoke)
 smoke_test_wsi_count: 3

@@ -12,11 +12,11 @@
 - `smoke_test_wsi_count` (default 3) and `random_seed: 42` live in `configs/data.yaml`.
 
 ## Pipelines (order matters)
-- Phase 2: `python scripts/run_phase2_pipeline.py` (runs `cohort_comparison → register_manifest → build_clinical_manifest → build_slide_manifest → merge_survival_manifest → validate_manifest → download_subset --no-download → verify_downloads`). Then real download: `python -m data_tools.download_subset -n 3`, `python -m data_tools.verify_downloads`, `python -m preprocessing.validate_wsi`.
-- Phase 3 (needs `data/matched_cohort.csv`): `python scripts/run_phase3_pipeline.py` → `data/final_manifest.csv` (one row per `case_id`, `split` stays empty until Phase 4) + `data/dataset_audit.json`. Validate-only: `python -m data_tools.validate_final_manifest [--require-wsi]`.
-- Phase 4: `python scripts/run_phase4_pipeline.py` → assigns `split` in `final_manifest.csv` + `data/splits.json`. Validate: `python -m data_tools.validate_final_manifest --require-split`.
-- Phase 5: `pip install -e ".[wsi]"` then `python scripts/run_phase5_pipeline.py` → `data/phase5_preprocessing_audit.json` + artifacts under `data/preprocessed/` (gitignored). OpenSlide baseline until TRIDENT is wired in `preprocessing/run_trident.py`.
-- Phases 6–14 smoke: `python scripts/run_phases_6_14_smoke.py` (embeddings + synthetic Cox/MIL train + package). Full cohort: [docs/HUONG_DAN_HUAN_LUYEN.md](docs/HUONG_DAN_HUAN_LUYEN.md).
+- GDC cohort: `python scripts/run_gdc_cohort_pipeline.py` (runs `cohort_comparison → register_manifest → build_clinical_manifest → build_slide_manifest → merge_survival_manifest → validate_manifest → download_subset --no-download → verify_downloads`). Then real download: `python -m data_tools.download_subset -n 3`, `python -m data_tools.verify_downloads`, `python -m preprocessing.validate_wsi`.
+- Final manifest (needs `data/matched_cohort.csv`): `python scripts/run_final_manifest_pipeline.py` → `data/final_manifest.csv` (one row per `case_id`, `split` empty until splits) + `data/dataset_audit.json`. Validate-only: `python -m data_tools.validate_final_manifest [--require-wsi]`.
+- Patient splits: `python scripts/run_patient_splits_pipeline.py` → assigns `split` in `final_manifest.csv` + `data/splits.json`. Validate: `python -m data_tools.validate_final_manifest --require-split`.
+- WSI preprocessing: `pip install -e ".[wsi]"` then `python scripts/run_wsi_preprocess_pipeline.py` → `data/wsi_preprocessing_audit.json` + artifacts under `data/preprocessed/` (gitignored). OpenSlide baseline until TRIDENT is wired in `preprocessing/run_trident.py`.
+- Training smoke: `python scripts/run_training_smoke.py` (embeddings + synthetic Cox/MIL train + package). Full cohort: [docs/HUONG_DAN_HUAN_LUYEN.md](docs/HUONG_DAN_HUAN_LUYEN.md).
 - Do not run pipeline modules out of order; each step expects the previous step's CSV artifact. `download_subset --no-download` only writes `data/subset_manifest.txt`; without the flag it shells out to external `gdc-client` (warns and skips if not on PATH).
 
 ## Domain rules

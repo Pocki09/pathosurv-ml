@@ -1,4 +1,4 @@
-# Phase 5+ — WSI patch extraction (smoke test uses OpenSlide baseline; TRIDENT optional later)
+# WSI patch extraction (OpenSlide baseline; TRIDENT optional later)
 backend: openslide_baseline  # future: trident
 
 patch_size: 256
@@ -16,7 +16,7 @@ morph_kernel: 5
 max_white_fraction: 0.85
 min_tissue_fraction: 0.15
 
-# Smoke / dev cap (full cohort runs raise or set null in later phases)
+# Smoke / dev cap (raise or set null for full cohort runs)
 max_patches_per_slide: 200
 max_slides: 3
 

@@ -1,4 +1,4 @@
-# Phase 8–9 — training hyperparameters (not used in Phase 2)
+# Training hyperparameters (AdamW, early stopping on validation C-index)
 optimizer: AdamW
 early_stopping_metric: validation_c_index
 max_epochs: 100
@@ -8,7 +8,7 @@ weight_decay: 1.0e-4
 patience: 15
 batch_size: 8
 
-# Phase 4 — patient-level split (stratified on event_status; must sum to < 1.0 with train implicit)
+# Patient-level split (stratified on event_status; test + val ratios must sum to < 1.0)
 split:
   test_ratio: 0.15
   validation_ratio: 0.15

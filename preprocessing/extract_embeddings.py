@@ -1,4 +1,4 @@
-"""Extract patch embeddings from Phase 5 patch_coordinates + local WSI."""
+"""Extract patch embeddings from patch_coordinates.csv + local WSI."""
 
 from __future__ import annotations
 

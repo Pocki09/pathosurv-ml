@@ -1,0 +1,7 @@
+{
+  "package_version": "1.0.0",
+  "model_contract_version": "pathosurv-lite-v1",
+  "model_name": "attention_mil_cox",
+  "checkpoint_sha256": "b76f7177725c750d64141c781500e84007c1d9e871886abff2200854af16992c",
+  "encoder_id": "resnet50_imagenet"
+}

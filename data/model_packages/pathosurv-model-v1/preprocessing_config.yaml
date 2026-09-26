@@ -1,0 +1,23 @@
+# WSI patch extraction (package snapshot; OpenSlide baseline)
+backend: openslide_baseline  # future: trident
+
+patch_size: 256
+stride: 512
+# Target approx 20x if objective power is available on the slide
+target_magnification: 20
+
+# Tissue mask on downsampled thumbnail (see tissue_downsample)
+tissue_downsample: 32
+tissue_saturation_min: 20
+tissue_value_max: 240
+morph_kernel: 5
+
+# Patch QC on RGB tiles
+max_white_fraction: 0.85
+min_tissue_fraction: 0.15
+
+# Smoke / dev cap (raise for full cohort)
+max_patches_per_slide: 200
+max_slides: 3
+
+output_subdir: preprocessed
